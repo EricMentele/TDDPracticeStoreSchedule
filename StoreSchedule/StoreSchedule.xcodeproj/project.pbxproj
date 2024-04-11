@@ -76,8 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				8CCE7DD42BC89BD80021395C /* StoreSchedule.h */,
-				8CCE7DEB2BC89CF90021395C /* HTTPClient.swift */,
-				8CCE7DED2BC89DDF0021395C /* PlaceholderHTTPClient.swift */,
+				8CCE7DEF2BC89F570021395C /* API */,
 			);
 			path = StoreSchedule;
 			sourceTree = "<group>";
@@ -89,6 +88,15 @@
 				8CCE7DE92BC89C250021395C /* HTTPClientTests.swift */,
 			);
 			path = StoreScheduleTests;
+			sourceTree = "<group>";
+		};
+		8CCE7DEF2BC89F570021395C /* API */ = {
+			isa = PBXGroup;
+			children = (
+				8CCE7DEB2BC89CF90021395C /* HTTPClient.swift */,
+				8CCE7DED2BC89DDF0021395C /* PlaceholderHTTPClient.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
