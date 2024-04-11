@@ -9,12 +9,6 @@ import XCTest
 import Foundation
 import StoreSchedule
 
-protocol HTTPClient {
-    typealias Result = Swift.Result<Data, Error>
-    
-    func get(from url: URL) async -> Result
-}
-
 final class HTTPClientTests: XCTestCase {
     func test_getFromURL_ReturnsData() async {
         let sut = HTTPClientPlaceholder()
