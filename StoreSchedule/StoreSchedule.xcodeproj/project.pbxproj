@@ -10,6 +10,7 @@
 		8CCE7DDA2BC89BD80021395C /* StoreSchedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CCE7DD12BC89BD80021395C /* StoreSchedule.framework */; };
 		8CCE7DDF2BC89BD80021395C /* StoreScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCE7DDE2BC89BD80021395C /* StoreScheduleTests.swift */; };
 		8CCE7DE02BC89BD80021395C /* StoreSchedule.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CCE7DD42BC89BD80021395C /* StoreSchedule.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8CCE7DEA2BC89C250021395C /* HTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCE7DE92BC89C250021395C /* HTTPClientTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +28,7 @@
 		8CCE7DD42BC89BD80021395C /* StoreSchedule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoreSchedule.h; sourceTree = "<group>"; };
 		8CCE7DD92BC89BD80021395C /* StoreScheduleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StoreScheduleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CCE7DDE2BC89BD80021395C /* StoreScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreScheduleTests.swift; sourceTree = "<group>"; };
+		8CCE7DE92BC89C250021395C /* HTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				8CCE7DDE2BC89BD80021395C /* StoreScheduleTests.swift */,
+				8CCE7DE92BC89C250021395C /* HTTPClientTests.swift */,
 			);
 			path = StoreScheduleTests;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CCE7DEA2BC89C250021395C /* HTTPClientTests.swift in Sources */,
 				8CCE7DDF2BC89BD80021395C /* StoreScheduleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
