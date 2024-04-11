@@ -12,6 +12,7 @@
 		8CCE7DE02BC89BD80021395C /* StoreSchedule.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CCE7DD42BC89BD80021395C /* StoreSchedule.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8CCE7DEA2BC89C250021395C /* HTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCE7DE92BC89C250021395C /* HTTPClientTests.swift */; };
 		8CCE7DEC2BC89CF90021395C /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCE7DEB2BC89CF90021395C /* HTTPClient.swift */; };
+		8CCE7DEE2BC89DDF0021395C /* PlaceholderHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCE7DED2BC89DDF0021395C /* PlaceholderHTTPClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		8CCE7DDE2BC89BD80021395C /* StoreScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreScheduleTests.swift; sourceTree = "<group>"; };
 		8CCE7DE92BC89C250021395C /* HTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientTests.swift; sourceTree = "<group>"; };
 		8CCE7DEB2BC89CF90021395C /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		8CCE7DED2BC89DDF0021395C /* PlaceholderHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderHTTPClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 			children = (
 				8CCE7DD42BC89BD80021395C /* StoreSchedule.h */,
 				8CCE7DEB2BC89CF90021395C /* HTTPClient.swift */,
+				8CCE7DED2BC89DDF0021395C /* PlaceholderHTTPClient.swift */,
 			);
 			path = StoreSchedule;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CCE7DEE2BC89DDF0021395C /* PlaceholderHTTPClient.swift in Sources */,
 				8CCE7DEC2BC89CF90021395C /* HTTPClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
