@@ -1,4 +1,4 @@
-# TDD Practice
+# TDD Practice Store Schedule
 
 ### Story: Customer wants to see store hours for the week
 
