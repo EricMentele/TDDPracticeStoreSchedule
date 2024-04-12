@@ -10,9 +10,9 @@ import Foundation
 public final class HTTPClientPlaceholder: HTTPClient {
     public let jsonString: String
     
-    public func get(from url: URL) async -> HTTPClient.Result {
-        guard let data = jsonString.data(using: .utf8) else { return .failure(Error.invalidDataString) }
-        return .success(data)
+    public func get(from url: URL) async throws -> Data {
+        guard let data = jsonString.data(using: .utf8) else { throw Error.invalidDataString }
+        return data
     }
     
     public init(jsonString: String = mockScheduleJson) {
