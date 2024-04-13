@@ -14,9 +14,14 @@ struct RemoteStoreDaySchedule: Decodable {
     let closes: String
 }
 
-private final class StoreDayScheduleParser {
+final class StoreDayScheduleParser {
     static func remoteStoreDaySchedulesFrom(_ data: Data) throws -> [RemoteStoreDaySchedule] {
-        return try! JSONDecoder().decode([RemoteStoreDaySchedule].self, from: data)
+        guard let daySchedules = try? JSONDecoder().decode([RemoteStoreDaySchedule].self, from: data) else { throw Error.invalidData }
+        return daySchedules
+    }
+    
+    enum Error: Swift.Error {
+        case invalidData
     }
 }
 
@@ -28,6 +33,20 @@ final class StoreScheduleTests: XCTestCase {
         
         XCTAssertNotNil(storeDaySchedules)
         XCTAssertFalse(storeDaySchedules!.isEmpty)
+    }
+    
+    func test_remoteStoreDaySchedulesFromData_returnsErrorOnInvalidData() {
+        let data = Data()
+        
+        var error: Error?
+        
+        do {
+            let storeDaySchedules = try StoreDayScheduleParser.remoteStoreDaySchedulesFrom(data)
+        } catch let invalidDataError {
+            error = invalidDataError
+        }
+        
+        XCTAssertNotNil(error)
     }
 }
 
