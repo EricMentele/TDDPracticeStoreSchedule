@@ -25,12 +25,17 @@ public struct StoreDaySchedule: Equatable {
 }
 
 public final class StoreDayScheduleMapper {
-    public static func storeDaySchedulesFrom(_ days: [RemoteStoreDaySchedule]) -> [StoreDaySchedule] {
-        days.map(scheduleFrom)
+    public enum Error: Swift.Error {
+        case invalidDayMapping
     }
     
-    private static func scheduleFrom(_ schedule: RemoteStoreDaySchedule) -> StoreDaySchedule {
-        let day = StoreDaySchedule.Day(rawValue: schedule.day)!
+    public static func storeDaySchedulesFrom(_ days: [RemoteStoreDaySchedule]) throws -> [StoreDaySchedule] {
+        try days.map(scheduleFrom)
+    }
+    
+    private static func scheduleFrom(_ schedule: RemoteStoreDaySchedule) throws -> StoreDaySchedule {
+        guard let day = StoreDaySchedule.Day(rawValue: schedule.day) else { throw Error.invalidDayMapping }
+        
         return StoreDaySchedule(
             day: day,
             opens: schedule.opens,
@@ -44,9 +49,15 @@ final class StoreScheduleTests: XCTestCase {
         let remoteSchedules = try RemoteStoreDayScheduleParser.remoteStoreDaySchedulesFrom(StoreScheduleTests.mockScheduleJsonData)
         let expected = StoreScheduleTests.expectedDaySchedules
         
-        let schedules = StoreDayScheduleMapper.storeDaySchedulesFrom(remoteSchedules)
+        let schedules = try! StoreDayScheduleMapper.storeDaySchedulesFrom(remoteSchedules)
         
         XCTAssertEqual(schedules, expected)
+    }
+    
+    func test_storeDayScheduleFrom_throwsAnErrorForUnrecognizedDayValue() throws {
+        let remoteSchedules = try RemoteStoreDayScheduleParser.remoteStoreDaySchedulesFrom(StoreScheduleTests.mockScheduleJsonDataUnrecognizedDay)
+        
+        XCTAssertThrowsError(try StoreDayScheduleMapper.storeDaySchedulesFrom(remoteSchedules))
     }
 }
 
@@ -102,6 +113,47 @@ private extension StoreScheduleTests {
         },
         {
             "day": "WEDNESDAY",
+            "opens": "09:00 AM",
+            "closes": "11:00 PM"
+        },
+        {
+            "day": "THURSDAY",
+            "opens": "07:00 AM",
+            "closes": "11:00 PM"
+        },
+        {
+            "day": "FRIDAY",
+            "opens": "07:00 AM",
+            "closes": "11:00 PM"
+        },
+        {
+            "day": "SATURDAY",
+            "opens": "09:00 AM",
+            "closes": "11:00 PM"
+        },
+        {
+            "day": "SUNDAY",
+            "opens": "09:00 AM",
+            "closes": "11:00 PM"
+        }
+    ]
+    """.data(using: .utf8)!
+    
+    static let mockScheduleJsonDataUnrecognizedDay =
+    """
+    [
+        {
+            "day": "monday",
+            "opens": "07:00 AM",
+            "closes": "11:00 PM"
+        },
+        {
+            "day": "flip",
+            "opens": "07:00 AM",
+            "closes": "11:00 PM"
+        },
+        {
+            "day": "flop",
             "opens": "09:00 AM",
             "closes": "11:00 PM"
         },
