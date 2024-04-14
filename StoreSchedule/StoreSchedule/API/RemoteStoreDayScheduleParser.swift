@@ -7,11 +7,13 @@
 
 import Foundation
 
+public typealias RemoteStoreDaySchedule = RemoteStoreDayScheduleParser.RemoteStoreDaySchedule
+
 public final class RemoteStoreDayScheduleParser {
     public struct RemoteStoreDaySchedule: Decodable {
-        let day: String
-        let opens: String
-        let closes: String
+        public let day: String
+        public let opens: String
+        public let closes: String
     }
     
     public enum Error: Swift.Error {
