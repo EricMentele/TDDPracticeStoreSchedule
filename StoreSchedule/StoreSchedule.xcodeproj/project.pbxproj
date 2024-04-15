@@ -15,6 +15,9 @@
 		8CCE7DEE2BC89DDF0021395C /* PlaceholderHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCE7DED2BC89DDF0021395C /* PlaceholderHTTPClient.swift */; };
 		8CCE7DF32BCB67790021395C /* RemoteStoreDayScheduleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCE7DF22BCB67790021395C /* RemoteStoreDayScheduleParser.swift */; };
 		8CCE7DF52BCB69A80021395C /* RemoteStoreScheduleParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCE7DF42BCB69A80021395C /* RemoteStoreScheduleParserTests.swift */; };
+		8CCE7DF72BCC1A4D0021395C /* StoreDaySchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCE7DF62BCC1A4D0021395C /* StoreDaySchedule.swift */; };
+		8CCE7DF92BCC1A9C0021395C /* StoreDayScheduleMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCE7DF82BCC1A9C0021395C /* StoreDayScheduleMapper.swift */; };
+		8CCE7DFB2BCC1AE70021395C /* StoreDayScheduleMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCE7DFA2BCC1AE70021395C /* StoreDayScheduleMapperTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +40,9 @@
 		8CCE7DED2BC89DDF0021395C /* PlaceholderHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderHTTPClient.swift; sourceTree = "<group>"; };
 		8CCE7DF22BCB67790021395C /* RemoteStoreDayScheduleParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteStoreDayScheduleParser.swift; sourceTree = "<group>"; };
 		8CCE7DF42BCB69A80021395C /* RemoteStoreScheduleParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteStoreScheduleParserTests.swift; sourceTree = "<group>"; };
+		8CCE7DF62BCC1A4D0021395C /* StoreDaySchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDaySchedule.swift; sourceTree = "<group>"; };
+		8CCE7DF82BCC1A9C0021395C /* StoreDayScheduleMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDayScheduleMapper.swift; sourceTree = "<group>"; };
+		8CCE7DFA2BCC1AE70021395C /* StoreDayScheduleMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDayScheduleMapperTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +97,7 @@
 				8CCE7DDE2BC89BD80021395C /* StoreScheduleTests.swift */,
 				8CCE7DE92BC89C250021395C /* HTTPClientTests.swift */,
 				8CCE7DF42BCB69A80021395C /* RemoteStoreScheduleParserTests.swift */,
+				8CCE7DFA2BCC1AE70021395C /* StoreDayScheduleMapperTests.swift */,
 			);
 			path = StoreScheduleTests;
 			sourceTree = "<group>";
@@ -101,6 +108,8 @@
 				8CCE7DEB2BC89CF90021395C /* HTTPClient.swift */,
 				8CCE7DED2BC89DDF0021395C /* PlaceholderHTTPClient.swift */,
 				8CCE7DF22BCB67790021395C /* RemoteStoreDayScheduleParser.swift */,
+				8CCE7DF62BCC1A4D0021395C /* StoreDaySchedule.swift */,
+				8CCE7DF82BCC1A9C0021395C /* StoreDayScheduleMapper.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -216,6 +225,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CCE7DF32BCB67790021395C /* RemoteStoreDayScheduleParser.swift in Sources */,
+				8CCE7DF72BCC1A4D0021395C /* StoreDaySchedule.swift in Sources */,
+				8CCE7DF92BCC1A9C0021395C /* StoreDayScheduleMapper.swift in Sources */,
 				8CCE7DEE2BC89DDF0021395C /* PlaceholderHTTPClient.swift in Sources */,
 				8CCE7DEC2BC89CF90021395C /* HTTPClient.swift in Sources */,
 			);
@@ -225,6 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CCE7DFB2BCC1AE70021395C /* StoreDayScheduleMapperTests.swift in Sources */,
 				8CCE7DEA2BC89C250021395C /* HTTPClientTests.swift in Sources */,
 				8CCE7DF52BCB69A80021395C /* RemoteStoreScheduleParserTests.swift in Sources */,
 				8CCE7DDF2BC89BD80021395C /* StoreScheduleTests.swift in Sources */,
