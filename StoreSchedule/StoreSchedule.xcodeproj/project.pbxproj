@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8CCE7DDA2BC89BD80021395C /* StoreSchedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CCE7DD12BC89BD80021395C /* StoreSchedule.framework */; };
-		8CCE7DDF2BC89BD80021395C /* StoreScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCE7DDE2BC89BD80021395C /* StoreScheduleTests.swift */; };
+		8CCE7DDF2BC89BD80021395C /* StoreDaySchedulePipelineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCE7DDE2BC89BD80021395C /* StoreDaySchedulePipelineTests.swift */; };
 		8CCE7DE02BC89BD80021395C /* StoreSchedule.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CCE7DD42BC89BD80021395C /* StoreSchedule.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8CCE7DEA2BC89C250021395C /* HTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCE7DE92BC89C250021395C /* HTTPClientTests.swift */; };
 		8CCE7DEC2BC89CF90021395C /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCE7DEB2BC89CF90021395C /* HTTPClient.swift */; };
@@ -34,7 +34,7 @@
 		8CCE7DD12BC89BD80021395C /* StoreSchedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StoreSchedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CCE7DD42BC89BD80021395C /* StoreSchedule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoreSchedule.h; sourceTree = "<group>"; };
 		8CCE7DD92BC89BD80021395C /* StoreScheduleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StoreScheduleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8CCE7DDE2BC89BD80021395C /* StoreScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreScheduleTests.swift; sourceTree = "<group>"; };
+		8CCE7DDE2BC89BD80021395C /* StoreDaySchedulePipelineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDaySchedulePipelineTests.swift; sourceTree = "<group>"; };
 		8CCE7DE92BC89C250021395C /* HTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientTests.swift; sourceTree = "<group>"; };
 		8CCE7DEB2BC89CF90021395C /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		8CCE7DED2BC89DDF0021395C /* PlaceholderHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderHTTPClient.swift; sourceTree = "<group>"; };
@@ -94,7 +94,7 @@
 		8CCE7DDD2BC89BD80021395C /* StoreScheduleTests */ = {
 			isa = PBXGroup;
 			children = (
-				8CCE7DDE2BC89BD80021395C /* StoreScheduleTests.swift */,
+				8CCE7DDE2BC89BD80021395C /* StoreDaySchedulePipelineTests.swift */,
 				8CCE7DE92BC89C250021395C /* HTTPClientTests.swift */,
 				8CCE7DF42BCB69A80021395C /* RemoteStoreScheduleParserTests.swift */,
 				8CCE7DFA2BCC1AE70021395C /* StoreDayScheduleMapperTests.swift */,
@@ -239,7 +239,7 @@
 				8CCE7DFB2BCC1AE70021395C /* StoreDayScheduleMapperTests.swift in Sources */,
 				8CCE7DEA2BC89C250021395C /* HTTPClientTests.swift in Sources */,
 				8CCE7DF52BCB69A80021395C /* RemoteStoreScheduleParserTests.swift in Sources */,
-				8CCE7DDF2BC89BD80021395C /* StoreScheduleTests.swift in Sources */,
+				8CCE7DDF2BC89BD80021395C /* StoreDaySchedulePipelineTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
