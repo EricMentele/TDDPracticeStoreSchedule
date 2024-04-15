@@ -20,6 +20,12 @@ public struct StoreDaySchedule: Equatable {
 }
 
 public extension StoreDaySchedule {
+    var hours: String {
+        opens + closes
+    }
+}
+
+public extension StoreDaySchedule {
     enum Day: String, Equatable {
         case monday = "MONDAY"
         case tuesday = "TUESDAY"

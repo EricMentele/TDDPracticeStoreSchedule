@@ -86,13 +86,13 @@ private extension StoreDaySchedulePipelineTests {
     
     struct ParserMock {
         final class Succeeds: StoreDayScheduleParser {
-            static func remoteStoreDaySchedulesFrom(_ data: Data) throws -> [StoreSchedule.RemoteStoreDaySchedule] {
+            static func remoteStoreDaySchedulesFrom(_ data: Data) throws -> [RemoteStoreDaySchedule] {
                 []
             }
         }
         
         final class Fails: StoreDayScheduleParser {
-            static func remoteStoreDaySchedulesFrom(_ data: Data) throws -> [StoreSchedule.RemoteStoreDaySchedule] {
+            static func remoteStoreDaySchedulesFrom(_ data: Data) throws -> [RemoteStoreDaySchedule] {
                 throw ParsingError.invalidData
             }
         }
@@ -100,13 +100,13 @@ private extension StoreDaySchedulePipelineTests {
     
     struct MapperMock {
         final class Succeeds: StoreDayScheduleMapper {
-            static func storeDaySchedulesFrom(_ days: [StoreSchedule.RemoteStoreDaySchedule]) throws -> [StoreSchedule.StoreDaySchedule] {
+            static func storeDaySchedulesFrom(_ days: [RemoteStoreDaySchedule]) throws -> [StoreDaySchedule] {
                 expectedDaySchedules
             }
         }
         
         final class Fails: StoreDayScheduleMapper {
-            static func storeDaySchedulesFrom(_ days: [StoreSchedule.RemoteStoreDaySchedule]) throws -> [StoreSchedule.StoreDaySchedule] {
+            static func storeDaySchedulesFrom(_ days: [RemoteStoreDaySchedule]) throws -> [StoreDaySchedule] {
                 throw MappingError.invalidDay
             }
         }

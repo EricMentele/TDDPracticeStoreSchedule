@@ -22,6 +22,7 @@
 		8CCE7DFF2BCDB9420021395C /* StoreDayScheduleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCE7DFE2BCDB9420021395C /* StoreDayScheduleProvider.swift */; };
 		8CCE7E012BCDBA020021395C /* StoreDayScheduleMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCE7E002BCDBA020021395C /* StoreDayScheduleMapper.swift */; };
 		8CCE7E032BCDBAFF0021395C /* StoreDayScheduleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCE7E022BCDBAFF0021395C /* StoreDayScheduleParser.swift */; };
+		8CCE7E052BCDBC6E0021395C /* LocalStoreScheduleLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCE7E042BCDBC6E0021395C /* LocalStoreScheduleLoaderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		8CCE7DFE2BCDB9420021395C /* StoreDayScheduleProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDayScheduleProvider.swift; sourceTree = "<group>"; };
 		8CCE7E002BCDBA020021395C /* StoreDayScheduleMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDayScheduleMapper.swift; sourceTree = "<group>"; };
 		8CCE7E022BCDBAFF0021395C /* StoreDayScheduleParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDayScheduleParser.swift; sourceTree = "<group>"; };
+		8CCE7E042BCDBC6E0021395C /* LocalStoreScheduleLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStoreScheduleLoaderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				8CCE7DE92BC89C250021395C /* HTTPClientTests.swift */,
 				8CCE7DF42BCB69A80021395C /* RemoteStoreScheduleParserTests.swift */,
 				8CCE7DFA2BCC1AE70021395C /* StoreDayScheduleMapperTests.swift */,
+				8CCE7E042BCDBC6E0021395C /* LocalStoreScheduleLoaderTests.swift */,
 			);
 			path = StoreScheduleTests;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CCE7E052BCDBC6E0021395C /* LocalStoreScheduleLoaderTests.swift in Sources */,
 				8CCE7DFB2BCC1AE70021395C /* StoreDayScheduleMapperTests.swift in Sources */,
 				8CCE7DEA2BC89C250021395C /* HTTPClientTests.swift in Sources */,
 				8CCE7DF52BCB69A80021395C /* RemoteStoreScheduleParserTests.swift in Sources */,
