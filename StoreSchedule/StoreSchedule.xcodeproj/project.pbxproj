@@ -104,11 +104,7 @@
 		8CCE7DDD2BC89BD80021395C /* StoreScheduleTests */ = {
 			isa = PBXGroup;
 			children = (
-				8CCE7DDE2BC89BD80021395C /* StoreDaySchedulePipelineTests.swift */,
-				8CCE7DE92BC89C250021395C /* HTTPClientTests.swift */,
-				8CCE7DF42BCB69A80021395C /* RemoteStoreScheduleParserTests.swift */,
-				8CCE7DFA2BCC1AE70021395C /* StoreDayScheduleMapperTests.swift */,
-				8CCE7E042BCDBC6E0021395C /* LocalStoreScheduleLoaderTests.swift */,
+				8CCE7E062BCDD5DB0021395C /* APITests */,
 			);
 			path = StoreScheduleTests;
 			sourceTree = "<group>";
@@ -127,6 +123,18 @@
 				8CCE7DFC2BCDB8230021395C /* StoreDaySchedulePipeline.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		8CCE7E062BCDD5DB0021395C /* APITests */ = {
+			isa = PBXGroup;
+			children = (
+				8CCE7DDE2BC89BD80021395C /* StoreDaySchedulePipelineTests.swift */,
+				8CCE7DE92BC89C250021395C /* HTTPClientTests.swift */,
+				8CCE7DF42BCB69A80021395C /* RemoteStoreScheduleParserTests.swift */,
+				8CCE7DFA2BCC1AE70021395C /* StoreDayScheduleMapperTests.swift */,
+				8CCE7E042BCDBC6E0021395C /* LocalStoreScheduleLoaderTests.swift */,
+			);
+			path = APITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
