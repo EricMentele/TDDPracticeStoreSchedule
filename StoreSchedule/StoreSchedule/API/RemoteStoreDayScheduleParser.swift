@@ -7,15 +7,7 @@
 
 import Foundation
 
-public protocol StoreDayScheduleParser {
-    static func remoteStoreDaySchedulesFrom(_ data: Data) throws -> [RemoteStoreDaySchedule]
-}
-
 public typealias RemoteStoreDaySchedule = RemoteStoreDayScheduleParser.RemoteStoreDaySchedule
-
-public enum ParsingError: Error {
-    case invalidData
-}
 
 public final class RemoteStoreDayScheduleParser: StoreDayScheduleParser {
     public struct RemoteStoreDaySchedule: Decodable {
