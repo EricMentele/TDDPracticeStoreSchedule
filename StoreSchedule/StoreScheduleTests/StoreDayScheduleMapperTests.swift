@@ -13,7 +13,7 @@ final class StoreDayScheduleMapperTests: XCTestCase {
         let remoteSchedules = try RemoteStoreDayScheduleParser.remoteStoreDaySchedulesFrom(StoreDayScheduleMapperTests.mockScheduleJsonData)
         let expected = StoreDayScheduleMapperTests.expectedDaySchedules
         
-        let schedules = try! StoreDayScheduleMapper.storeDaySchedulesFrom(remoteSchedules)
+        let schedules = try! RemoteStoreDayScheduleMapper.storeDaySchedulesFrom(remoteSchedules)
         
         XCTAssertEqual(schedules, expected)
     }
@@ -21,7 +21,7 @@ final class StoreDayScheduleMapperTests: XCTestCase {
     func test_storeDayScheduleFrom_throwsAnErrorForUnrecognizedDayValue() throws {
         let remoteSchedules = try RemoteStoreDayScheduleParser.remoteStoreDaySchedulesFrom(StoreDayScheduleMapperTests.mockScheduleJsonDataUnrecognizedDay)
         
-        XCTAssertThrowsError(try StoreDayScheduleMapper.storeDaySchedulesFrom(remoteSchedules))
+        XCTAssertThrowsError(try RemoteStoreDayScheduleMapper.storeDaySchedulesFrom(remoteSchedules))
     }
 }
 

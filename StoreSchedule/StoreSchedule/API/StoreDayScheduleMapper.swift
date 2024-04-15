@@ -7,7 +7,11 @@
 
 import Foundation
 
-public final class StoreDayScheduleMapper {
+public protocol StoreDayScheduleMapper {
+    static func storeDaySchedulesFrom(_ days: [RemoteStoreDaySchedule]) throws -> [StoreDaySchedule]
+}
+
+public final class RemoteStoreDayScheduleMapper: StoreDayScheduleMapper {
     public enum Error: Swift.Error {
         case invalidDayMapping
     }

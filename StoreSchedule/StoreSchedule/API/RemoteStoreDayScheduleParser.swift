@@ -7,9 +7,13 @@
 
 import Foundation
 
+public protocol StoreDayScheduleParser {
+    static func remoteStoreDaySchedulesFrom(_ data: Data) throws -> [RemoteStoreDaySchedule]
+}
+
 public typealias RemoteStoreDaySchedule = RemoteStoreDayScheduleParser.RemoteStoreDaySchedule
 
-public final class RemoteStoreDayScheduleParser {
+public final class RemoteStoreDayScheduleParser: StoreDayScheduleParser {
     public struct RemoteStoreDaySchedule: Decodable {
         public let day: String
         public let opens: String
