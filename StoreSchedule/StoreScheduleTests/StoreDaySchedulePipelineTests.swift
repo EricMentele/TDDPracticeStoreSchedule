@@ -43,7 +43,7 @@ final class StoreDaySchedulePipelineTests: XCTestCase {
         XCTAssertEqual(daySchedules, exptectedSchedules)
     }
     
-    func test_getStoreDaySchedules_returnsHTTPClientErrorOnFailure() async throws {
+    func test_getStoreDaySchedules_returnsHTTPClientErrorOnHTTPClientFailure() async throws {
         let sut = sutPassing(httpClient: false)
         let expectedError = HTTPClientError.connectivity
         
@@ -56,13 +56,27 @@ final class StoreDaySchedulePipelineTests: XCTestCase {
         
         XCTAssertEqual(thrownError as? HTTPClientError, expectedError)
     }
+    
+    func test_getStoreDaySchedules_returnsParsingErrorOnParsingFailure() async throws {
+        let sut = sutPassing(parser: false)
+        let expectedError = ParsingError.invalidData
+        
+        var thrownError: Error?
+        do {
+            let _ = try await sut.getStoreDaySchedules()
+        } catch {
+            thrownError = expectedError
+        }
+        
+        XCTAssertEqual(thrownError as? ParsingError, expectedError)
+    }
 }
 
 private extension StoreDaySchedulePipelineTests {
     func sutPassing(httpClient: Bool = true, parser: Bool = true, mapper: Bool = true) -> StoreDayScheduleProvider {
         StoreDaySchedulePipeline(
             api: httpClient ? HTTPClientMock.Succeeds() : HTTPClientMock.Fails(),
-            parser: ParserMock.self,
+            parser: parser ? ParserMock.Succeeds.self : ParserMock.Fails.self,
             mapper: MapperMock.self
         )
     }
@@ -81,9 +95,17 @@ private extension StoreDaySchedulePipelineTests {
         }
     }
     
-    final class ParserMock: StoreDayScheduleParser {
-        static func remoteStoreDaySchedulesFrom(_ data: Data) throws -> [StoreSchedule.RemoteStoreDaySchedule] {
-            []
+    struct ParserMock {
+        final class Succeeds: StoreDayScheduleParser {
+            static func remoteStoreDaySchedulesFrom(_ data: Data) throws -> [StoreSchedule.RemoteStoreDaySchedule] {
+                []
+            }
+        }
+        
+        final class Fails: StoreDayScheduleParser {
+            static func remoteStoreDaySchedulesFrom(_ data: Data) throws -> [StoreSchedule.RemoteStoreDaySchedule] {
+                throw ParsingError.invalidData
+            }
         }
     }
     

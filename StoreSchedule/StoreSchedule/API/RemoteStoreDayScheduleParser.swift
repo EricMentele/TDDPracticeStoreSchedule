@@ -13,6 +13,10 @@ public protocol StoreDayScheduleParser {
 
 public typealias RemoteStoreDaySchedule = RemoteStoreDayScheduleParser.RemoteStoreDaySchedule
 
+public enum ParsingError: Error {
+    case invalidData
+}
+
 public final class RemoteStoreDayScheduleParser: StoreDayScheduleParser {
     public struct RemoteStoreDaySchedule: Decodable {
         public let day: String
@@ -20,12 +24,8 @@ public final class RemoteStoreDayScheduleParser: StoreDayScheduleParser {
         public let closes: String
     }
     
-    public enum Error: Swift.Error {
-        case invalidData
-    }
-    
     public static func remoteStoreDaySchedulesFrom(_ data: Data) throws -> [RemoteStoreDaySchedule] {
-        guard let daySchedules = try? JSONDecoder().decode([RemoteStoreDaySchedule].self, from: data) else { throw Error.invalidData }
+        guard let daySchedules = try? JSONDecoder().decode([RemoteStoreDaySchedule].self, from: data) else { throw ParsingError.invalidData }
         return daySchedules
     }
 }
