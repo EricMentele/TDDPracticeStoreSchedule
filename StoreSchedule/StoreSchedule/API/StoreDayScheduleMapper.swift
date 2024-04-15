@@ -11,17 +11,17 @@ public protocol StoreDayScheduleMapper {
     static func storeDaySchedulesFrom(_ days: [RemoteStoreDaySchedule]) throws -> [StoreDaySchedule]
 }
 
+public enum MappingError: Error {
+    case invalidDay
+}
+
 public final class RemoteStoreDayScheduleMapper: StoreDayScheduleMapper {
-    public enum Error: Swift.Error {
-        case invalidDayMapping
-    }
-    
     public static func storeDaySchedulesFrom(_ days: [RemoteStoreDaySchedule]) throws -> [StoreDaySchedule] {
         try days.map(scheduleFrom)
     }
     
     private static func scheduleFrom(_ schedule: RemoteStoreDaySchedule) throws -> StoreDaySchedule {
-        guard let day = StoreDaySchedule.Day(rawValue: schedule.day) else { throw Error.invalidDayMapping }
+        guard let day = StoreDaySchedule.Day(rawValue: schedule.day) else { throw MappingError.invalidDay }
         
         return StoreDaySchedule(
             day: day,

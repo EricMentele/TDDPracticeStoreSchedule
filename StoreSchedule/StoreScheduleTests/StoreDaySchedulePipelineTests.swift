@@ -70,6 +70,20 @@ final class StoreDaySchedulePipelineTests: XCTestCase {
         
         XCTAssertEqual(thrownError as? ParsingError, expectedError)
     }
+    
+    func test_getStoreDaySchedules_returnsMappingErrorOnMappingFailure() async throws {
+        let sut = sutPassing(mapper: false)
+        let expectedError = MappingError.invalidDay
+        
+        var thrownError: Error?
+        do {
+            let _ = try await sut.getStoreDaySchedules()
+        } catch {
+            thrownError = expectedError
+        }
+        
+        XCTAssertEqual(thrownError as? MappingError, expectedError)
+    }
 }
 
 private extension StoreDaySchedulePipelineTests {
@@ -77,7 +91,7 @@ private extension StoreDaySchedulePipelineTests {
         StoreDaySchedulePipeline(
             api: httpClient ? HTTPClientMock.Succeeds() : HTTPClientMock.Fails(),
             parser: parser ? ParserMock.Succeeds.self : ParserMock.Fails.self,
-            mapper: MapperMock.self
+            mapper: mapper ? MapperMock.Succeeds.self : MapperMock.Fails.self
         )
     }
     
@@ -109,9 +123,17 @@ private extension StoreDaySchedulePipelineTests {
         }
     }
     
-    final class MapperMock: StoreDayScheduleMapper {
-        static func storeDaySchedulesFrom(_ days: [StoreSchedule.RemoteStoreDaySchedule]) throws -> [StoreSchedule.StoreDaySchedule] {
-            expectedDaySchedules
+    struct MapperMock {
+        final class Succeeds: StoreDayScheduleMapper {
+            static func storeDaySchedulesFrom(_ days: [StoreSchedule.RemoteStoreDaySchedule]) throws -> [StoreSchedule.StoreDaySchedule] {
+                expectedDaySchedules
+            }
+        }
+        
+        final class Fails: StoreDayScheduleMapper {
+            static func storeDaySchedulesFrom(_ days: [StoreSchedule.RemoteStoreDaySchedule]) throws -> [StoreSchedule.StoreDaySchedule] {
+                throw MappingError.invalidDay
+            }
         }
     }
     
