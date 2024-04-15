@@ -11,7 +11,7 @@ public final class HTTPClientPlaceholder: HTTPClient {
     public let jsonString: String
     
     public func get(from url: URL) async throws -> Data {
-        guard let data = jsonString.data(using: .utf8) else { throw Error.invalidDataString }
+        guard let data = jsonString.data(using: .utf8) else { throw HTTPClientError.connectivity }
         return data
     }
     
@@ -20,11 +20,11 @@ public final class HTTPClientPlaceholder: HTTPClient {
     }
 }
 
+public enum HTTPClientError: Error {
+    case connectivity
+}
+
 extension HTTPClientPlaceholder {
-    enum Error: Swift.Error {
-        case invalidDataString
-    }
-    
     public static let mockScheduleJson =
     """
     [

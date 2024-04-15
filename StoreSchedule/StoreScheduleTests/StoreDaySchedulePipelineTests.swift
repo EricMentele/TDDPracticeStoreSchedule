@@ -35,27 +35,49 @@ public final class StoreDaySchedulePipeline: StoreDayScheduleProvider {
 
 final class StoreDaySchedulePipelineTests: XCTestCase {
     func test_getStoreDaySchedules_returnsStoreDaySchedules() async throws {
-        let sut = sutAllPassing()
+        let sut = sutPassing()
         let exptectedSchedules = StoreDaySchedulePipelineTests.expectedDaySchedules
         
         let daySchedules = try await sut.getStoreDaySchedules()
         
         XCTAssertEqual(daySchedules, exptectedSchedules)
     }
+    
+    func test_getStoreDaySchedules_returnsHTTPClientErrorOnFailure() async throws {
+        let sut = sutPassing(httpClient: false)
+        let expectedError = HTTPClientError.connectivity
+        
+        var thrownError: Error?
+        do {
+            let _ = try await sut.getStoreDaySchedules()
+        } catch {
+            thrownError = expectedError
+        }
+        
+        XCTAssertEqual(thrownError as? HTTPClientError, expectedError)
+    }
 }
 
 private extension StoreDaySchedulePipelineTests {
-    func sutAllPassing() -> StoreDayScheduleProvider {
+    func sutPassing(httpClient: Bool = true, parser: Bool = true, mapper: Bool = true) -> StoreDayScheduleProvider {
         StoreDaySchedulePipeline(
-            api: APIMock(),
+            api: httpClient ? HTTPClientMock.Succeeds() : HTTPClientMock.Fails(),
             parser: ParserMock.self,
             mapper: MapperMock.self
         )
     }
     
-    struct APIMock: HTTPClient {
-        func get(from url: URL) async throws -> Data {
-            Data()
+    struct HTTPClientMock {
+        struct Succeeds: HTTPClient {
+            func get(from url: URL) async throws -> Data {
+                Data()
+            }
+        }
+        
+        struct Fails: HTTPClient {
+            func get(from url: URL) async throws -> Data {
+                throw HTTPClientError.connectivity
+            }
         }
     }
     
