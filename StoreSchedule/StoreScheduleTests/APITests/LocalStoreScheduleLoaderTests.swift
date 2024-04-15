@@ -8,11 +8,15 @@
 import XCTest
 import StoreSchedule
 
+protocol StoreScheduleLoader {
+    func loadStoreSchedule() async throws -> StoreSchedule
+}
+
 struct StoreSchedule: Equatable {
     let weekDaysGroupedBySharedHours: [[StoreDaySchedule]]
 }
 
-final class LocalStoreScheduleLoader {
+final class LocalStoreScheduleLoader: StoreScheduleLoader {
     let daySchedulesProvider: StoreDayScheduleProvider
     
     func loadStoreSchedule() async throws -> StoreSchedule {

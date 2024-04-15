@@ -23,6 +23,7 @@
 		8CCE7E012BCDBA020021395C /* StoreDayScheduleMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCE7E002BCDBA020021395C /* StoreDayScheduleMapper.swift */; };
 		8CCE7E032BCDBAFF0021395C /* StoreDayScheduleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCE7E022BCDBAFF0021395C /* StoreDayScheduleParser.swift */; };
 		8CCE7E052BCDBC6E0021395C /* LocalStoreScheduleLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCE7E042BCDBC6E0021395C /* LocalStoreScheduleLoaderTests.swift */; };
+		8CCE7E082BCDD6270021395C /* StoreScheduleViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCE7E072BCDD6270021395C /* StoreScheduleViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		8CCE7E002BCDBA020021395C /* StoreDayScheduleMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDayScheduleMapper.swift; sourceTree = "<group>"; };
 		8CCE7E022BCDBAFF0021395C /* StoreDayScheduleParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDayScheduleParser.swift; sourceTree = "<group>"; };
 		8CCE7E042BCDBC6E0021395C /* LocalStoreScheduleLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStoreScheduleLoaderTests.swift; sourceTree = "<group>"; };
+		8CCE7E072BCDD6270021395C /* StoreScheduleViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreScheduleViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				8CCE7E062BCDD5DB0021395C /* APITests */,
+				8CCE7E072BCDD6270021395C /* StoreScheduleViewModelTests.swift */,
 			);
 			path = StoreScheduleTests;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				8CCE7E052BCDBC6E0021395C /* LocalStoreScheduleLoaderTests.swift in Sources */,
 				8CCE7DFB2BCC1AE70021395C /* StoreDayScheduleMapperTests.swift in Sources */,
 				8CCE7DEA2BC89C250021395C /* HTTPClientTests.swift in Sources */,
+				8CCE7E082BCDD6270021395C /* StoreScheduleViewModelTests.swift in Sources */,
 				8CCE7DF52BCB69A80021395C /* RemoteStoreScheduleParserTests.swift in Sources */,
 				8CCE7DDF2BC89BD80021395C /* StoreDaySchedulePipelineTests.swift in Sources */,
 			);
