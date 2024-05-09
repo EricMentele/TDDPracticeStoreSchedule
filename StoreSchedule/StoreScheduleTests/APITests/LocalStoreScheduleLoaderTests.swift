@@ -44,7 +44,8 @@ final class LocalStoreScheduleLoader: StoreScheduleLoader {
 
 final class LocalStoreScheduleLoaderTests: XCTestCase {
     func test_loadStoreSchedule_returnsStoreSchedule() async throws {
-        let sut = LocalStoreScheduleLoader(daySchedulesProvider: StoreDayScheduleProviderMock())
+        let provider = StoreDayScheduleProviderMock()
+        let sut = LocalStoreScheduleLoader(daySchedulesProvider: provider)
         let expectedSchedule = LocalStoreScheduleLoaderTests.expectedDaySchedules
         
         let schedule = try await sut.loadStoreSchedule()
